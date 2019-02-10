@@ -1,8 +1,8 @@
 /* ****************************************************************
  * @author: <Mark Gerone F. Grospe>
  * @app name: <Enrollment Slip>
- * @app desc: <A program that Assesses students enrollment. It will ask for students name, program/course, year level,
- * and number of units enrolled then determine the corresponding year name of the student and rate per unit
+ * @app desc: <A program that assesses students enrollment. It will ask for students name, program/course, year level,
+ * and number of units enrolled then determine the corresponding year name of the student and rate per unit 
  * then compute the tuition fee.>
  * @history:
  *  - <yyyy/mm/dd> | <name>
@@ -35,7 +35,7 @@ int main() {
     // Place your code logic after this comment line
     // ***********************************************************
 
-    string firstName, middleInitial, lastName ;
+    string firstName, middleInitial, lastName;
     string course;
     int yearLevel;
     int ratePerUnit;
@@ -45,29 +45,28 @@ int main() {
     float balance;
     float downPaymentRate;
 
-    //Assign rate of Downpayment at 30%
+    //assign rate of Downpayment at 30%
     downPaymentRate = 30.00/100.00;
-    cout << downPaymentRate;
 
     //Welcome address for user
-    cout << "Welcome Student! " << endl;
-    cout << "Kindly enter the  needed information: " << endl;
+    cout << "Welcome Student!" << endl;
+    cout << "Kindly enter the needed information." << endl << endl;
 
-    //Ask for user input
-    cout << "Student Name " << endl;
-    cout << "\t First Name \t: ";
+    //ask for user input
+    cout << "Student Name:" << endl;
+    cout << "\tFirst Name \t: ";
     getline(cin, firstName);
-    cout << "\t Middle Initial\t: ";
+    cout << "\tMiddle Initial \t: ";
     getline(cin, middleInitial);
-    cout << "\t Last Name \t: ";
+    cout << "\tLast Name \t: ";
     getline(cin, lastName);
 
     cout << endl << "List of Offered Courses:" << endl;
     cout << "\t 1 - Bachelor of Science in Information Technology" << endl
-         << "\t 2 - Bachelor of Science in Business Administration" << endl
+         << "\t 2 - Bachelor of Science in Business Administration" << endl 
          << "\t 3 - Bachelor of Science in Accountancy" << endl
          << "\t 4 - Bachelor of Science in Education" << endl << endl;
-    
+
     cout << "Kindly enter the number corresponding to your course!" << endl;
     cout << "Program/Course \t: ";
     cin >> course;
@@ -76,103 +75,103 @@ int main() {
     cout << "No. of Units \t: ";
     cin >> noOfUnits;
 
-    cout << endl << endl << "**************************************" << endl;
-    cout << endl << "Congratulations!" << endl << "Your assessment is now complete." 
-         << endl << "Kindly check the following details before proceeding to next step." << endl << endl;
+    cout << endl <<"*********************************" << endl;
+    cout << endl << "CONGRATULATIONS!" << endl << endl << "Your assessment is now complete."
+         << endl << "Kindly check the following details before proceeding to next step." <<endl << endl;
 
-    cout << "**************************************" << endl << endl;
-    cout << "ENROLLMENT SLIP \n" << endl;
-    cout << "Student Name \t: " <<firstName + " " + middleInitial + " " + lastName << endl;
+    cout << "*********************************" << endl << endl;
+    cout << "ENROLLMENT SLIP" << endl << endl;
+    cout << "Student Name \t: " << firstName + " " + middleInitial + " " + lastName << endl;
 
-    //Identify Program/Course based on value
-    cout << "Program/Course \t: " ;
+    //Identify Program/Course base on value
+    cout << "Program/Course \t: ";
         if (course == "1")
-            { 
-                cout << "Bachelor of Science in Information Technology" << endl;
-            }
-                else if (course == "2")
-                {
-                    cout << "Bachelor of Science in Business Administration"  << endl;
-                }
-                else if (course == "3")
-                {
-                    cout << "Bachelor of Science in Accountancy"  << endl;
-                }
-                 else if (course == "4")
-                {
-                    cout << "Bachelor of Science in Education"  << endl;
-                }
-        else 
+        {
+            cout << "Bachelor of Science in Information Technology" << endl;
+        }
+            else if (course == "2")
             {
-            cout << "You entered an invalid input." << endl << "\t\t  Kindly retake the assessment."  << endl;
+                cout << "Bachelor of Science in Business Administration" << endl;
             }
-
-    //Identify Year Name based on year level
-    cout << "Year Name \t: " ;
+            else if (course == "3")
+            {
+                cout << "Bachelor of Science in Accountancy" << endl;
+            }
+            else if (course == "4")
+            {
+                cout << "Bachelor of Science in Education" << endl;
+            }
+        else
+        {
+            cout << "You entered an invalid input." << endl << "\t\t Kindly retake the assessment." << endl; 
+        }
+        
+    //identify Year name based on year level
+    cout << "Year name \t: ";
         switch (yearLevel)
         {
-            case 1: 
+            case 1:
                 cout << "Freshman" << endl;
                 break;
-            case 2: 
+            case 2:
                 cout << "Sophomore" << endl;
                 break;
-            case 3: 
+            case 3:
                 cout << "Junior" << endl;
                 break;
-            case 4: 
+            case 4:
                 cout << "Senior" << endl;
                 break;
-            case 5: 
+            case 5:
                 cout << "Senior" << endl;
-                break;
+                break;        
             default:
-                 cout << "You entered an invalid year level. "<< endl << "\t\t  Kindly retake the assessment." << endl;
+                cout << "You entered an invalid year level." << endl << "\t\t  Kindly retake the assessment." << endl;
                 break;
         }
 
     cout << "No. of Units \t: " << noOfUnits << endl;
 
-    //Compute for Tuition fee
-    cout << "Tuition Fee \t: " ;
-        //Idnetify Rate per Unt based on year level
+    //Compute for Tuition Fee
+    cout << "Tuition Fee \t: ";
+        //Identify rate per unit based on year level
         switch (yearLevel)
-            {
-                case 1: 
-                    ratePerUnit = 1500;
-                    break;
-                case 2: 
-                    ratePerUnit = 1800;
-                    break;
-                case 3: 
-                    ratePerUnit = 2000;
-                    break;
-                case 4: 
-                    ratePerUnit = 2300;
-                    break;
-                case 5: 
-                    ratePerUnit = 2300;
-                    break;
-            
-                default:
-                    ratePerUnit = 0;
-                    break;
-            }
-        tuitionFee = ratePerUnit * noOfUnits;
-        cout << tuitionFee << endl;
+        {
+            case 1:
+                ratePerUnit = 1500;
+                break;
+            case 2:
+                ratePerUnit = 1800;
+                break;
+            case 3:
+                ratePerUnit = 2000;
+                break;
+            case 4:
+                ratePerUnit = 2300;
+                break;
+            case 5:
+                ratePerUnit = 2300;
+                break;
+            default:
+                ratePerUnit = 0;
+                break;
+        }
+    tuitionFee = ratePerUnit * noOfUnits;
+    cout << tuitionFee << endl;
 
     //Compute for Downpayment
-    cout << "Down Payment \t: " ;
+    cout << "Down Payment \t: ";
         downPayment = tuitionFee * downPaymentRate;
         cout << downPayment << endl;
 
     //Compute for Balance
-    cout << "Balance \t: " ;
+    cout << "Balance \t: ";
         balance = tuitionFee - downPayment;
         cout << balance << endl << endl;
-        
-    cout << "**************************************" << endl;
+
+    cout << "*********************************" << endl;
     cin.ignore();
+
     // ********************** DO NOT CHANGE **********************
     // Print a new line and ask user for any key before exiting
     // ***********************************************************
